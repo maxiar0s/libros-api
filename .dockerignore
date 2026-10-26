@@ -1,0 +1,6 @@
+# Only database bootstrap files belong in the image build context.
+**
+!Dockerfile
+!database/
+!database/oracle-schema.sql
+!database/init-library.sh

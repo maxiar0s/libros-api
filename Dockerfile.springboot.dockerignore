@@ -1,0 +1,7 @@
+# Dockerfile-specific allowlist keeps the Oracle image context unchanged.
+**
+!Dockerfile.springboot
+!pom.xml
+!src/
+!src/main/
+!src/main/**

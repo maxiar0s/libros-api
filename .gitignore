@@ -1,0 +1,39 @@
+# Maven build output
+target/
+
+# Local environment and credentials; keep example templates shareable.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Oracle wallets and private key stores
+wallet/
+wallets/
+Wallet_*/
+*.sso
+*.p12
+*.jks
+
+# IDE-specific local files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Logs and JVM crash reports
+*.log
+hs_err_pid*
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local Tooling
+.atl/
+.codegraph/
+odd/
+test-local/
