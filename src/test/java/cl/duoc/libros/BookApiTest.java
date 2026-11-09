@@ -37,6 +37,23 @@ class BookApiTest {
     }
 
     @Test
+    void listsBooksWithAllAttributesAndReturnsAnEmptyArrayWhenNoneExist() throws Exception {
+        mvc.perform(get("/api/books"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("[]"));
+
+        long id = createBook();
+        mvc.perform(get("/api/books"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].id").value(id))
+                .andExpect(jsonPath("$[0].title").value("Cien años de soledad"))
+                .andExpect(jsonPath("$[0].author").value("Gabriel García Márquez"))
+                .andExpect(jsonPath("$[0].publicationYear").value(1967))
+                .andExpect(jsonPath("$[0].genre").value("Novel"));
+    }
+
+    @Test
     void createsAndRetrievesAllBookAttributes() throws Exception {
         long id = createBook();
         mvc.perform(get("/api/books/{id}", id))

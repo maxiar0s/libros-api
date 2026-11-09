@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/books")
@@ -14,6 +15,11 @@ public class BookController {
 
     public BookController(BookService service) {
         this.service = service;
+    }
+
+    @GetMapping
+    public List<Book> findAll() {
+        return service.findAll();
     }
 
     @GetMapping("/{id}")

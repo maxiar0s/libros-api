@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 public class BookService {
@@ -12,6 +14,10 @@ public class BookService {
 
     public BookService(BookRepository repository) {
         this.repository = repository;
+    }
+
+    public List<Book> findAll() {
+        return repository.findAll();
     }
 
     public Book findById(Long id) {
