@@ -1,1 +1,36 @@
-*{box-sizing:border-box}html{background:#f4f0e8;color:#1f2925;font-family:Georgia,serif}body{margin:0}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:wait;opacity:.55}:focus-visible{outline:3px solid #bf5f3d;outline-offset:3px}input{min-width:0}::selection{background:#d7b39e}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f5f6f8;
+  color: #242a30;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+:focus-visible {
+  outline: 3px solid #9b6817;
+  outline-offset: 2px;
+}
+
+input {
+  min-width: 0;
+}
